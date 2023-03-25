@@ -1,12 +1,11 @@
-
-<h1>DATA NET GUARDIANS</h1>
-<p>Pelissä käytetään Python frameworkia sekä MySQL tietokantaa</p>
-<p>Python frameworkia tarvitaan nettisivujen rakentamiseen. Ideana on julkaista sivulla tietokannasta eria asioita mitä pelissä tapahtuu</p>
-<h2>FLASK Python framework</h2>
-https://flask.palletsprojects.com/en/2.2.x/
-
-<h2>MySQL</h2>
+<h1>SQL PROJEKTI</h1>
+<p>Projektiin kuuluu:</p>
+<ul>
+<li>MySQL</li>
+<li>Unity</li>
+<li>Excel</li>
+</ul>
 https://www.mysql.com/
-
+https://unity.com/download
 <h2>C# koodaus</h2>
 https://docs.unity3d.com/ScriptReference/
