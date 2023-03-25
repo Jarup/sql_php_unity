@@ -9,3 +9,5 @@ https://www.mysql.com/<br>
 https://unity.com/download
 <h2>C# koodaus</h2>
 https://docs.unity3d.com/ScriptReference/
+
+  ---
