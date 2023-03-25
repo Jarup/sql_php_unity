@@ -13,11 +13,11 @@ https://docs.unity3d.com/ScriptReference/
   <p>Projektin ideana on näyttää miten Unitysta viedään tiedot SQL tietokantaan ja sitä kautta flaskiin.</p>
   
   
- //////////////////          //////////////////            //////////////////
+
 
       UNITY           ->            SQL             ->            FLASK
   
-//////////////////           //////////////////            //////////////////
+
 
 
 
