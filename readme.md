@@ -10,11 +10,15 @@ https://unity.com/download
 <h2>C# koodaus</h2>
 https://docs.unity3d.com/ScriptReference/
 
-  ---
+  <p>Projektin ideana on näyttää miten Unitysta viedään tiedot SQL tietokantaan ja sitä kautta flaskiin.</p>
   
-  div {
-  width: 300px;
-  border: 15px solid green;
-  padding: 50px;
-  margin: 20px;
-}
+  
+ //////////////////          //////////////////            //////////////////
+
+      UNITY           ->            SQL             ->            FLASK
+  
+//////////////////           //////////////////            //////////////////
+
+
+
+
