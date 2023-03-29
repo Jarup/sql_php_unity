@@ -15,7 +15,7 @@ https://docs.unity3d.com/ScriptReference/
   <p>Ideana on tallentaa käyttäjän tiedot tietokantaan ja salata salasanat Hash algoritmilla ja vähän kertoa tietoturvasta</p>
   
   
-
+       WWWForms                     $_POST                        INSERT_INTO
 
       UNITY           ->            PHP             ->            SQL
                       <-                            <-
