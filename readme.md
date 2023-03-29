@@ -29,14 +29,14 @@ https://docs.unity3d.com/ScriptReference/
 
 <h4>Jotta php sivu voi yhdistää ja käyttää tietokannan tietoja täytyy php tiedostoon luoda sql funktio joka yhdistää tietokantaan</h4>
 
-<p>
+
 <?php
 $con = mysqli_connect('localhost',root_user,rootpassword,database_name,);
 
 
 ?>
 
-</p>
+
 
 
 
