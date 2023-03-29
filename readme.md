@@ -32,7 +32,8 @@ https://docs.unity3d.com/ScriptReference/
 
 ```<?php
 // $ on variaatio merkintä php kielessä jonka jälkeen lähdetään kirjoittamaan koodia.
-$con = mysqli_connect('localhost',root_user,rootpassword,database_name,);
+// Mikäli jos php:koodissa on jotain väärin palauttaa php tiedosto virhe koodin 500
+$con = mysqli_connect('localhost',root_user,rootpassword,database_name);
 
 
 ?>
