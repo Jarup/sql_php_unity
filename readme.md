@@ -12,7 +12,7 @@ https://www.w3schools.com/sql/default.asp
 https://docs.unity3d.com/ScriptReference/
 
   <p>Projektin ideana on näyttää miten Unitysta viedään tiedot PHP tiedostolle ja sitä kautta SQL tietokantaan ja toisinpäin.</p>
-  
+  <p>Ideana on tallentaa käyttäjän tiedot tietokantaan ja salata salasanat Hash algoritmilla ja estää hakkereiden pääsyä koodiin formista</p>
   
   
 
@@ -26,16 +26,30 @@ https://docs.unity3d.com/ScriptReference/
 <p>MYSQLstä valitaan asennuksen yhteydessä perusasetukset ja samoin MAMPISSA.</p>
 
 <h3>PHP tiedostojen ja uuden tietokannan luominen</3>
+<p>MAMPIN asennuksen jälkeen suunnataan sen document roottiin joka löytyy siis MAMP/htdocs/</p>
+<p>Tämän jälkeen luodaan uusi tekstitiedosto joka muunnetaan muotoon php</p>
+
 
 <h4>Jotta php sivu voi yhdistää ja käyttää tietokannan tietoja täytyy php tiedostoon luoda sql funktio joka yhdistää tietokantaan</h4>
 
 
 ```<?php
 // $ on variaatio merkintä php kielessä jonka jälkeen lähdetään kirjoittamaan koodia.
-// Mikäli jos php:koodissa on jotain väärin palauttaa php tiedosto virhe koodin 500
-$con = mysqli_connect('localhost',root_user,rootpassword,database_name);
+// Mikäli jos php:koodissa on jotain väärin palauttaa php tiedosto virhe koodin 500.
+//500: konditionaali jota ei voida käsitellä.
+//404: tiedostoa ei löydy
+//200: onnistuneesti ladattu
+//304: Mitään ei ole muokattu sivulla tarkoittaa sitä että välimuistissa tallennettuja tietoja ei ole muokattu.
+$con = mysqli_connect('localhost',root_user,rootpassword,database_name); // mikäli jos jokin parametreistä on väärin antaa sivusto virheeksi
+                                                                         //Connect failed: Access denied for user 'root'@'localhost'
+if(mysqli_connect_errno()){
+echo("error! connection failed!");  // echo on responssi sivustolle jonka täytyy olla string siis teksti muodossa.
 
+}
 
+$username = $_POST["username]; // PHP käsittelee sivun formin tiedot $_POST funktiolla ja annetun datan pitää olla dictionary muodossa.
+$usernameClean = filter_var($username, FILTER_SANITIZE_EMAIL); // PHPssä on valmiiksi sisään rakennettuja funktioita jotka siivoavat tekstistä ylimääräiset symbolit.
+                                                               // https://www.php.net/manual/en/filter.filters.sanitize.php
 ?>
 
 
