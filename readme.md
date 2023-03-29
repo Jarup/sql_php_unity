@@ -1,4 +1,4 @@
-<h1>Unity login projekti</h1>
+<h1>Unity käyttäjä tietokanta projekti</h1>
 <p>Projektiin kuuluu:</p>
 <ul>
 <li>MySQL</li>
@@ -12,7 +12,7 @@ https://www.w3schools.com/sql/default.asp
 https://docs.unity3d.com/ScriptReference/
 
   <p>Projektin ideana on näyttää miten Unitysta viedään tiedot PHP tiedostolle ja sitä kautta SQL tietokantaan ja toisinpäin.</p>
-  <p>Ideana on tallentaa käyttäjän tiedot tietokantaan ja salata salasanat Hash algoritmilla ja vähän kertoa tietoturvasta</p>
+  <p>Ideana on tallentaa käyttäjän tiedot tietokantaan ja salata salasanat Hash algoritmilla ja kertoa Sql tietokannasta</p>
   
   
        WWWForms                     $_POST[""]                        
