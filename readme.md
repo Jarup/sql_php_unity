@@ -12,7 +12,7 @@ https://www.w3schools.com/sql/default.asp
 https://docs.unity3d.com/ScriptReference/
 
   <p>Projektin ideana on näyttää miten Unitysta viedään tiedot PHP tiedostolle ja sitä kautta SQL tietokantaan ja toisinpäin.</p>
-  <p>Ideana on tallentaa käyttäjän tiedot tietokantaan ja salata salasanat Hash algoritmilla ja estää hakkereiden pääsyä koodiin formista</p>
+  <p>Ideana on tallentaa käyttäjän tiedot tietokantaan ja salata salasanat Hash algoritmilla ja vähän kertoa tietoturvasta</p>
   
   
 
@@ -50,7 +50,7 @@ echo("error! connection failed!");  // echo on responssi sivustolle jonka täyty
 $username = $_POST["username]; // PHP käsittelee sivun formin tiedot $_POST funktiolla ja annetun datan pitää olla dictionary muodossa.
 $usernameClean = filter_var($username, FILTER_SANITIZE_EMAIL); // PHPssä on valmiiksi sisään rakennettuja funktioita jotka siivoavat tekstistä ylimääräiset symbolit.
                                                                // https://www.php.net/manual/en/filter.filters.sanitize.php
-?>
+?>                                                             // ylimääräiset symbolit kuten " tai ' voivat antaa pääsyn ulkopuoliselle siis hakkerille koodiin ja                                                                    // näin aiheuttaa tietomurron ja pääsyn tietokannan dataan.
 
 
 
