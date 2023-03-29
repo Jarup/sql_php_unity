@@ -16,7 +16,7 @@ https://docs.unity3d.com/ScriptReference/
   
   
        WWWForms                     $_POST[""]                        
-                                   INSERT_INTO
+       GetRequest                  INSERT_INTO
       UNITY           ->            PHP             ->            SQL
                       <-        SELECT * FROM table <-
 
