@@ -16,10 +16,10 @@ https://docs.unity3d.com/ScriptReference/
   
   
        WWWForms                     $_POST[""]                        
-       GetRequest                  INSERT_INTO
+       CreatePostRequest            INSERT_INTO
       UNITY           ->            PHP             ->            SQL
-                      <-        SELECT * FROM table <-
-
+      response        <-        SELECT * FROM table <-
+     loginRequest
 
 
 <h2>MYSQL:n ja MAMP:in asennus</h2>
