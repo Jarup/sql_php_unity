@@ -35,7 +35,7 @@ https://docs.unity3d.com/ScriptReference/
 $con = mysqli_connect('localhost',root_user,rootpassword,database_name,);
 
 
-?>```
+?>
 
 
 
