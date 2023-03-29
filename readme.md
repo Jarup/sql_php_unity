@@ -50,7 +50,7 @@ $email = $_POST["Email"];
 $password = $_POST["password"]; // haetun arvon pitää olla nimeltään sama kuin formissa.
 $username = $_POST["username]; // PHP käsittelee sivun formin tiedot $_POST funktiolla ja annetun datan pitää olla dictionary muodossa.
 $usernameClean = filter_var($username, FILTER_SANITIZE_EMAIL); // PHPssä on valmiiksi sisään rakennettuja funktioita jotka siivoavat tekstistä ylimääräiset symbolit.
-$EmailClean = filter_var($username, FILTER_SANITIZE_EMAIL);    // https://www.php.net/manual/en/filter.filters.sanitize.php 
+$EmailClean = filter_var($username, FILTER_SANITIZE_EMAIL);    // https://www.php.net/manual/en/filter.filters.sanitize.php ----> muita käytettäviä filttereitä.
                                                                // ylimääräiset symbolit kuten " tai ' voivat antaa pääsyn ulkopuoliselle siis hakkerille koodiin ja                                                                    // näin aiheuttaa tietomurron ja pääsyn tietokannan dataan.
 $passhas = password_hash($password, PASSWORD_DEFAULT);         // password_hash on hashaus algoritmi joka kryptaa salasanan. Salasana näkyy tietokannassa randomeina                                                                  // symboleina ja kirjaimina sekä numeroina. SQL tietokannassa merkkimäärä 255 VARCHARISSA jotta                                                                        // erroreilta/bugeilta. PASSWORD_DEFAULT on yleinen algoritmi phpssa.
 
