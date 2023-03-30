@@ -1,6 +1,6 @@
 <?php
 
-$con = mysqli_connect('localhost', 'root', 'root','unity_db');
+$con = mysqli_connect('localhost', 'root', 'root','unity_db'); // connecting database and mysql
 
 
 
