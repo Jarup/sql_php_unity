@@ -270,3 +270,4 @@ public class CreatePlayer : MonoBehaviour
 
 }
 ```
+<h2>Login c# tiedosto on periaatteessa samanlainen kuin rekisteröinti tiedosto. Ainoastaan formi on erilainen</h2>
