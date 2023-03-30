@@ -122,7 +122,7 @@ using UnityEngine.UI;
 public class CreatePlayer : MonoBehaviour
 {
 
-    // Input fields for setting username,email and password
+    // Luodaan ensin tekstitkentät tiedon käsittelylle
     public TMP_InputField usernameInput;
     public TMP_InputField emailInput;
     public TMP_InputField passwordInput;
@@ -132,7 +132,7 @@ public class CreatePlayer : MonoBehaviour
 
 
 
-   public void registernewplayer() // some conditions for input fields
+   public void registernewplayer() // Muutamia ehtoja tekstikentille
     {
 
         if(usernameInput.text == "")
@@ -160,25 +160,25 @@ public class CreatePlayer : MonoBehaviour
 
 
    
-    public void ErrorMessage(string message) // error when input is not correct
+    public void ErrorMessage(string message) // Mikäli jos jokin ehdoista oli väärin muokataan komponentin tyyliä ja tekstiä. tuodaan myös ehdosta teksti funktiolle.
     {
         RegisterButton.GetComponent<Image>().color = Color.red;
-        RegisterButtonText.text = message; 
+        RegisterButtonText.text = message;  // asetetaan teksti painikkeeseen.
         RegisterButtonText.fontSize = 24;
       
     }
 
-    // if there was an error and field was clicked again...
-    public void ResetRegisterButton() // reset button to original state after clicking field input
+    // Jos jokin virhe ehdoista täyttyi ja tekstikenttää painettiin uudelleen, resetoidaan painike alkuperäiseen tyyliin.
+    public void ResetRegisterButton() 
     {
 
-        RegisterButton.GetComponent<Image>().color = Color.white;
+        RegisterButton.GetComponent<Image>().color = Color.white; 
         RegisterButtonText.text = "Register";
         RegisterButtonText.fontSize = 24;
 
     }
 
-    public void SetButtonToSending() // set register button text to sending...
+    public void SetButtonToSending() // kun tietojen lähetys on käynnissä... 
     {
 
         RegisterButton.GetComponent<Image>().color = Color.gray;
@@ -188,7 +188,7 @@ public class CreatePlayer : MonoBehaviour
 
     }
 
-    public void SetButtonSuccess() // successfuly sended information
+    public void SetButtonSuccess() // tietojen lähetys onnistui...
     {
 
         RegisterButton.GetComponent<Image>().color = Color.green;
@@ -199,57 +199,55 @@ public class CreatePlayer : MonoBehaviour
 
 
 
-  IEnumerator CreatePlayerPostRequest() // check new data and send informtation to php file and to database
-    {
-
+  IEnumerator CreatePlayerPostRequest() // TIETOJEN LÄHETYS FUNKTIO: luodaan random_id käyttäjälle tietokantaan.
+                                        // Tämän jälkeen luodaan uusi WWWForm jolle annetaan variaatiot.
+    {                                   // Lähetetään tiedot php tiedostolle...
+                                        // Mikäli jos php tiedoston koodi on virheellinen palauttaa se serveri error koodi 500.
+                                        
         char[] random_id = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', };
-       
-        StringBuilder secret_id = new StringBuilder(); // empty string
+        char[] random_characters = {'4','2','6','h','f','!','@','R','B','?','D'};
+        StringBuilder secret_password = new StringBuilder(); // empty string
+        StringBuilder secret_id = new StringBuilder(); // Luodaan tyhjä string
         for (int val = 0; val < 9; val++)
         {
-            int random = UnityEngine.Random.Range(0, 10); // return random number between...
-            char character2 = random_id[random];
-            secret_id.Append(character2); // add random character to a string
+            int random = UnityEngine.Random.Range(0, 10); // palauttaa 0 ja 10 väliltä jonkin numeron...
+            char character2 = random_id[random];          // asetetaan random numero teksti juokkoon ja valitaan siis jokin randomi kirjain.
+            secret_id.Append(character2);                 // lisätään randomi kirjain tyhjään stringiin.
+            secret_password.Append(character); // add random character to a string
         }
-        string id = secret_id.ToString(); // give it to a new variable in string format
-
-        WWWForm newplayerInfo = new WWWForm(); // make new input form...
-        //newplayerInfo.AddField("apppassword", "thisisfromtheapp!");
+        string id = secret_id.ToString();                 // luodaan uusi variaatio ja tehdään random tekstistä string
+        app_pass = secret_password.ToString();
+        WWWForm newplayerInfo = new WWWForm(); // Luodaan uusi WWWForm
+        //newplayerInfo.AddField("apppassword", app_pass); // ensimmäisen parametrin täytyy olla sama phpssä jotta tietoja voidaan lukea.
         newplayerInfo.AddField("username", usernameInput.text);
         newplayerInfo.AddField("email", emailInput.text);
-        newplayerInfo.AddField("password", passwordInput.text);
-        newplayerInfo.AddField("userid", id); // set id to form
-        UnityWebRequest CreatePostRequest = UnityWebRequest.Post("http://localhost/newplayer.php",newplayerInfo); // search php file 
-        yield return CreatePostRequest.SendWebRequest();
+        newplayerInfo.AddField("password", passwordInput.text); 
+        newplayerInfo.AddField("userid", id); // käyttäjän id tunnus tietokannassa
+        UnityWebRequest CreatePostRequest = UnityWebRequest.Post("http://localhost/newplayer.php",newplayerInfo); // ensimäisessä parametrissa haetaan php tiedosto ja                                                                                                                   // seuraavassa annetaan formi post funktiolle.
+        yield return CreatePostRequest.SendWebRequest(); // Luo POST pyyntö. Tiedot lähetetään nyt php tiedostolle
 
 
 
-        if(CreatePostRequest.error == null) // if there is no error...
+        if(CreatePostRequest.error == null) // jos palvelin virhettä 500 ei tapahtunut...
         {
-            // start sending information...
+            // start sending information.
             Debug.Log("Good to go");
-            string response = CreatePostRequest.downloadHandler.text;
+            string response = CreatePostRequest.downloadHandler.text; // hae responssi sivulta...
 
             Debug.Log(response);
             // get response from website
-            if(response == "1" || response == "2" || response == "4" || response == "6")
+            if(response == "1" || response == "2" || response == "4" || response == "6") // phpssa on määritelty esim: echo("6") palauttaa ehdossa jonkin arvon.
             {
                 ErrorMessage("Server Error");
 
 
             }else if( response == "3")
             {
-                ErrorMessage("Username already exists");
+                ErrorMessage("Username already exists"); // Tietokannasta löytyy jo sama käyttäjä
             }
-               else if(response == "5")
-            {
-
-                ErrorMessage("Email Already Exists");
-
-            }
+         
 
            
-
             else
             {
                 Debug.Log("Sending information...");
