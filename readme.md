@@ -27,16 +27,18 @@ https://docs.unity3d.com/ScriptReference/
 <p>MYSQLstä valitaan asennuksen yhteydessä perusasetukset ja samoin MAMPISSA.</p>
 
 <p>Tämän jälkeen suunnataan phpadmin sivustolle</p>
-<li>
-  Luodaan uusi tietokanta vasemmasta valikosta</ul>
-  klikataan tietokantaa, jonka jälkeen avautuu uusi sivu</ul>
-  Uuden taulukon voi luoda joko SQL scriptillä tai alhaalta klikkaamalla tekstikenttää ja kirjoittamalla taulukon nimi ja sarakkeiden määrä
+http://localhost/phpMyAdmin/
+
+  1. Luodaan uusi tietokanta vasemmasta valikosta.
+  2. Klikataan tietokantaa, jonka jälkeen avautuu uusi sivu.
+  3. Uuden taulukon voi luoda joko SQL scriptillä tai alhaalta klikkaamalla tekstikenttää ja kirjoittamalla taulukon nimi ja sarakkeiden määrä.
   
 
 
 <h3>PHP tiedostojen ja uuden tietokannan luominen</3>
 <p>MAMPIN asennuksen jälkeen suunnataan sen document roottiin joka löytyy siis MAMP/htdocs/</p>
 <p>Tämän jälkeen luodaan uusi tekstitiedosto joka muunnetaan muotoon php</p>
+<p>Kaikkiin php sivuihin pääsee osoitteella localhost/tiedostonimi.php</p>
 
 <h4>Jotta php sivu voi yhdistää ja käyttää tietokannan tietoja täytyy php tiedostoon luoda sql funktio joka yhdistää tietokantaan</h4>
 
