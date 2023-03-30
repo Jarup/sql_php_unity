@@ -16,10 +16,10 @@ https://docs.unity3d.com/ScriptReference/
   <p>Ideana on tallentaa käyttäjän tiedot tietokantaan ja salata salasanat Hash algoritmilla ja kertoa miten tietokanta toimii</p>
   
   
-       WWWForms                     $_POST[""]                        
-       CreatePostRequest            INSERT_INTO
+       WWWForms                     $_POST[""]                    TRUNCATE, ALTER TABLE, DROP TABLE    
+       CreatePostRequest            INSERT_INTO                   PRIMARY KEY,FOREIGN KEY
       UNITY           ->            PHP             ->            SQL
-      response        <-        SELECT * FROM table <-
+      response        <-        SELECT * FROM table <-            INNER JOIN, SELECT * FROM
      loginRequest
 
 
