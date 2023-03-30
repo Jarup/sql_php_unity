@@ -71,7 +71,7 @@ $usernamecheckquery = "SELECT username FROM users WHERE username = '".$usernameC
 $usernamecheck = mysqli_query($con, $usernamecheckquery);
 
 if(mysqli_num_rows($usernamecheck)>0){
-echo("user already exists");
+echo("user already exists"); // jos käyttäjätunnus löytyikin tietokannasta niin tällöin luo responssi sivustolle, jonka jälkeen unityyn tulee responssi sanoma.
 exit();
 }
 
@@ -214,7 +214,7 @@ public class CreatePlayer : MonoBehaviour
             int random = UnityEngine.Random.Range(0, 10); // palauttaa 0 ja 10 väliltä jonkin numeron...
             char character2 = random_id[random];          // asetetaan random numero teksti juokkoon ja valitaan siis jokin randomi kirjain.
             secret_id.Append(character2);                 // lisätään randomi kirjain tyhjään stringiin.
-            secret_password.Append(character); // add random character to a string
+            secret_password.Append(character); // lisää randomi kirjain stringiin.
         }
         string id = secret_id.ToString();                 // luodaan uusi variaatio ja tehdään random tekstistä string
         app_pass = secret_password.ToString();
