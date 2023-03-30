@@ -95,7 +95,7 @@ if(mysqli_num_rows($emailcheck)>0){
 
 // our query code
 $insertuserquery = "INSERT INTO users(username,email,password,user_id) VALUES('".$usernameClean."','".$emailClean."','".$passhas."','".$userid."');";
-mysqli_query($con, $insertuserquery); // send information database
+mysqli_query($con, $insertuserquery); // lähetä informaatio tietokantaan
 $insertuserquery2 = "INSERT INTO user_info(user_id) VALUES('".$userid."');";
 mysqli_query($con, $insertuserquery2);
 
