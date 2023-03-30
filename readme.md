@@ -8,6 +8,7 @@
 https://www.mysql.com/<br>
 https://unity.com/download<br>
 https://www.w3schools.com/sql/default.asp
+https://www.mamp.info/en/windows/
 https://www.php.net/
 <h2>C# koodaus</h2>
 https://docs.unity3d.com/ScriptReference/
