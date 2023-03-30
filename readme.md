@@ -107,7 +107,7 @@ $con->close(); // kun tietokannan tietoja on käsitelty täytyy yhteys tämän j
 
 
 <h2>Unity sovelluksesta tietojen lähettäminen php tiedostolle/sivulle</h2>
-```C#
+```c#
 
 using System.Collections;
 using System.Collections.Generic;
