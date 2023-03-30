@@ -54,21 +54,43 @@ $EmailClean = filter_var($username, FILTER_SANITIZE_EMAIL);    // https://www.ph
                                                                // ylimääräiset symbolit kuten " tai ' voivat antaa pääsyn ulkopuoliselle siis hakkerille koodiin ja                                                                    // näin aiheuttaa tietomurron ja pääsyn tietokannan dataan.
 $passhas = password_hash($password, PASSWORD_DEFAULT);         // password_hash on hashaus algoritmi joka kryptaa salasanan. Salasana näkyy tietokannassa randomeina                                                                  // symboleina ja kirjaimina sekä numeroina. SQL tietokannassa merkkimäärä 255 VARCHARISSA jotta                                                                        // erroreilta/bugeilta. PASSWORD_DEFAULT on yleinen algoritmi phpssa.
 
-$usernamecheckquery = "SELECT username FROM player_info WHERE username = '".$usernameClean."':";
+//SQL query
+$usernamecheckquery = "SELECT username FROM users WHERE username = '".$usernameClean."';";
+$usernamecheck = mysqli_query($con, $usernamecheckquery);
 
-
-if(mysqli_num_rows($usernamecheckquery)>0){ // mysqli_num_rows ---> tarkastetaan löytyykö kyseistä tietoa tietokannasta.
-echo("username already exists");        
+if(mysqli_num_rows($usernamecheck)>0){
+echo("user already exists");
+exit();
 }
 
+//SQL Query
+$emailcheckquery = "SELECT email FROM users WHERE email = '".$emailClean."';";
+$emailcheck = mysqli_query($con, $emailcheckquery);
+
+if(mysqli_num_rows($emailcheck)>0){
+
+    echo("5");
+    exit();
+
+}//Error Codes
+//1 - Database connection Error
+//2 - usernamecheck query run into an error
+//3 - User already exists;
 
 
-if(mysqli_num_rows($emailcheckquery)>0){ // mysqli_num_rows ---> tarkastetaan löytyykö kyseistä tietoa tietokannasta.
-echo("username already exists");        
-}
+// '".$username."' -> when making new query in sql format
+
+
+// our query code
+$insertuserquery = "INSERT INTO users(username,email,password,user_id) VALUES('".$usernameClean."','".$emailClean."','".$passhas."','".$userid."');";
+mysqli_query($con, $insertuserquery); // send information database
+$insertuserquery2 = "INSERT INTO user_info(user_id) VALUES('".$userid."');";
+mysqli_query($con, $insertuserquery2);
 
 
 
+print("query completed");
+$con->close();
 <?
 
 
