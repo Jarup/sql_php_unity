@@ -8,6 +8,7 @@
 https://www.mysql.com/<br>
 https://unity.com/download<br>
 https://www.w3schools.com/sql/default.asp
+https://www.php.net/
 <h2>C# koodaus</h2>
 https://docs.unity3d.com/ScriptReference/
 
@@ -27,16 +28,15 @@ https://docs.unity3d.com/ScriptReference/
 
 <p>Tämän jälkeen suunnataan phpadmin sivustolle</p>
 <li>
-  <ul>Luodaan uusi tietokanta vasemmasta valikosta</ul>
-  <ul>klikataan tietokantaa, jonka jälkeen avautuu uusi sivu</ul>
-  <ul>Uuden taulukon voi luoda joko SQL scriptillä tai alhaalta klikkaamalla tekstikenttää ja kirjoittamalla taulukon nimi ja sarakkeiden määrä</ul>
-  <u>Jos </ul>
-</li>
+  Luodaan uusi tietokanta vasemmasta valikosta</ul>
+  klikataan tietokantaa, jonka jälkeen avautuu uusi sivu</ul>
+  Uuden taulukon voi luoda joko SQL scriptillä tai alhaalta klikkaamalla tekstikenttää ja kirjoittamalla taulukon nimi ja sarakkeiden määrä
+  
+
 
 <h3>PHP tiedostojen ja uuden tietokannan luominen</3>
 <p>MAMPIN asennuksen jälkeen suunnataan sen document roottiin joka löytyy siis MAMP/htdocs/</p>
 <p>Tämän jälkeen luodaan uusi tekstitiedosto joka muunnetaan muotoon php</p>
-
 
 <h4>Jotta php sivu voi yhdistää ja käyttää tietokannan tietoja täytyy php tiedostoon luoda sql funktio joka yhdistää tietokantaan</h4>
 
