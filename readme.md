@@ -13,7 +13,7 @@ https://www.php.net/
 https://docs.unity3d.com/ScriptReference/
 
   <p>Projektin ideana on näyttää miten Unitysta viedään tiedot PHP tiedostolle ja sitä kautta SQL tietokantaan ja toisinpäin.</p>
-  <p>Ideana on tallentaa käyttäjän tiedot tietokantaan ja salata salasanat Hash algoritmilla ja kertoa Sql tietokannasta</p>
+  <p>Ideana on tallentaa käyttäjän tiedot tietokantaan ja salata salasanat Hash algoritmilla ja kertoa miten tietokanta toimii</p>
   
   
        WWWForms                     $_POST[""]                        
