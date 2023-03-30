@@ -27,7 +27,7 @@ https://docs.unity3d.com/ScriptReference/
 <p>MYSQLstä valitaan asennuksen yhteydessä perusasetukset ja samoin MAMPISSA.</p>
 
 <p>Tämän jälkeen suunnataan phpadmin sivustolle</p>
-http://localhost/phpMyAdmin/>
+<a href=http://localhost/phpMyAdmin/>
 
   1. Luodaan uusi tietokanta vasemmasta valikosta.
   2. Klikataan tietokantaa, jonka jälkeen avautuu uusi sivu.
