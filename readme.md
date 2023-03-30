@@ -103,7 +103,7 @@ mysqli_query($con, $insertuserquery2);
 
 print("query completed");
 $con->close(); // kun tietokannan tietoja on käsitelty täytyy yhteys tämän jälkeen sulkea.
-<?
+?>
 ```
 
 
