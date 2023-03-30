@@ -42,6 +42,7 @@ https://docs.unity3d.com/ScriptReference/
 
 <h4>Jotta php sivu voi yhdistää ja käyttää tietokannan tietoja täytyy php tiedostoon luoda sql funktio joka yhdistää tietokantaan</h4>
 
+<h3>Alhaalla on esimerkki siitä kun tiedot on lähetetty eteenpäin formista</h3>
 
 ```<?php
 // $ on variaatio merkintä php kielessä jonka jälkeen lähdetään kirjoittamaan koodia.
@@ -100,8 +101,9 @@ mysqli_query($con, $insertuserquery2);
 
 
 print("query completed");
-$con->close();
+$con->close(); // kun tietokannan tietoja on käsitelty täytyy yhteys tämän jälkeen sulkea.
 <?
+```
 
 
 
